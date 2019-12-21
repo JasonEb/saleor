@@ -2113,7 +2113,8 @@ def test_order_query_with_filter_customer_fields(
     orders = content["data"]["orders"]["edges"]
     order_id = graphene.Node.to_global_id("Order", order.pk)
 
-    assert len(orders) == 1
+    assert len(orders) == 2 
+    # 542 Final Exam Bug
     assert orders[0]["node"]["id"] == order_id
 
 
